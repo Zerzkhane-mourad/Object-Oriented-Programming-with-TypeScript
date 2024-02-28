@@ -8,7 +8,6 @@ export function calculateEmployeSalaires(employeList: Employe[], salaireList: Sa
 
     employeList.forEach(employeData => {
         const salairesEmploye = salaireList.filter(salaire => salaire.idEmploye === employeData.idEmploye);
-        const salaireAnnuel = salairesEmploye.reduce((total, salaire) => total + (salaire.salaireMensuel * 12), 0);
         salairesEmploye.forEach(salaire => {
             employeSalaireAnnuelList.push(new EmployeSalaireAnnuelDto({
                 idEmploye: employeData.idEmploye,
